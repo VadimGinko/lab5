@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Phone Catalog</h1>
+{% if message %}
+    <p><strong>{{ message }}</strong></p>
+{% endif %}
+{% if latest_riddles %}
+     <table border="1">
+         <tr>
+         <td>Имя</td>
+         <td>Адресс</td>
+         <td>Дата</td>
+         <td>Телефон</td>
+         </tr>
+        {% for riddle in latest_riddles %}
+        	<tr>
+	        	<td>{{ riddle.Name }}</td>
+	        	<td>{{ riddle.Address }}</td>
+	        	<td>{{ riddle.RegDate }}</td>
+	        	<td>{{ riddle.Phone }}</td>
+        	</tr>
+        {% endfor %}
+     </table>
+{% else %}
+    <p>No riddles are available right now.</p>
+{% endif %}
+</body>
+</html>
